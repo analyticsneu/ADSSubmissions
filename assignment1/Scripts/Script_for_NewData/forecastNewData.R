@@ -1,8 +1,10 @@
 #setwd("C:\\Users\\cr203945\\Documents\\NEU\\Assignment 1\\")
 
-forecast.indata<-read.csv("C:\\Software\\r files\\forecastNewData2.csv", header = T)
-
-forecast.indata$Date<-strptime(forecast.indata$Day, '%m/%d/%Y')
+forecast.indata<-read.csv("C:\\Software\\forecastNewData.csv", header = T)
+colnames(forecast.indata)<-c("Day","Hour","Temp")
+date1<-as.Date(as.character(forecast.indata$Day), format='%Y%m%d')
+forecast.indata$Date<-date1
+#View(forecast.indata)
 forecast.indata$year<-as.numeric(format(forecast.indata$Date, '%Y'))
 forecast.indata$month<-as.numeric(format(forecast.indata$Date, '%m'))
 forecast.indata$day<-as.numeric(format(forecast.indata$Date, '%d'))
@@ -13,10 +15,10 @@ forecast.indata$Weekday<-ifelse(w<5, 1,0)
 #View(forecast.indata)
 forecast.indata$PeakHour<-ifelse((forecast.indata$Hour>=7) & (forecast.indata$Hour<20), 1,0)
 
-forecast.indata$Date<-NULL
+
 
 setnames(forecast.indata, old=c("Day","Hour","Temp","year","month","day","DayOfWeek"), new=c("Date", "hour","temperature","Year","month","day","Day Of Week"))
-forecast.indata$Date<-as.POSIXct(forecast.indata$Date, format="%m/%d/%Y")
+forecast.indata$Date<-as.POSIXct(date1, format="%m/%d/%Y")
 class(forecast.indata$Date)
 summary(forecast.indata)
 
@@ -27,8 +29,8 @@ summary(forecast.indata)
 #class(forecast.indata$Date)
 library(forecast)
 forecast6 <- predict(lm.fit6, forecast.indata)
-write.csv(forecast6,file = "forecastOutput_999999999.csv")
 par(mfrow=c(1,2))
 boxplot(forecast6)
 boxplot(powerData$kWh)
 
+write.csv(forecast6,file = "forecastOutput_999999999_1.csv")
