@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Excel03ConString-Web.config Connection String" description="Excel03ConString Connection String used in web.config by the application to access the database." defaultValue="Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};&#xD;&#xA;                         Extended Properties='Excel 8.0;HDR={1}'" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\users\\rutuja\\documents\\visual\ studio\ 2013\\Projects\\WalmartFinancialPredictionSite\\WalmartFinancialPredictionSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Excel03ConString']/@connectionString" />
+  </parameter>
+  <parameter name="Excel07ConString-Web.config Connection String" description="Excel07ConString Connection String used in web.config by the application to access the database." defaultValue="Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};&#xD;&#xA;                         Extended Properties='Excel 8.0;HDR={1}'" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\users\\rutuja\\documents\\visual\ studio\ 2013\\Projects\\WalmartFinancialPredictionSite\\WalmartFinancialPredictionSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Excel07ConString']/@connectionString" />
+  </parameter>
+</parameters>
