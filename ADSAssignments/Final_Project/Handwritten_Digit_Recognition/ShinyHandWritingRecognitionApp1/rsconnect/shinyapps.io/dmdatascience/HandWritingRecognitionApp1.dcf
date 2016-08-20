@@ -1,0 +1,9 @@
+name: HandWritingRecognitionApp1
+account: dmdatascience
+server: shinyapps.io
+appId: 120887
+bundleId: 535521
+url: https://dmdatascience.shinyapps.io/HandWritingRecognitionApp1/
+when: 1471558484.70192
+asMultiple: FALSE
+asStatic: FALSE
